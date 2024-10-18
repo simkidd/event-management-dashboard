@@ -75,28 +75,6 @@ header {
   color: #000;
 }
 
-/* Modal Styles */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding-top: 60px;
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
 /* Media Queries */
 @media screen and (max-width: 768px) {
   .mobile-menu-btn {
@@ -295,6 +273,22 @@ body.dark-mode {
       border: 1px solid var(--primary-dark);
       color: #fff;
     }
+
+    .details-bg {
+      background-color: var(--background-dark);
+      padding: 12px;
+      padding-inline: 16px;
+      border: 1px solid transparent;
+    }
+
+    .selected-row {
+      background-color: #514e5d;
+      border: 1px solid var(--primary-dark);
+    }
+
+    .show-row-btn {
+      color: #fff;
+    }
   }
 
   .bottom-nav {
@@ -303,6 +297,33 @@ body.dark-mode {
 
     .bottom-nav-link {
       color: #fff;
+    }
+  }
+
+  .modal {
+    .modal-content {
+      background: var(--primary-dark);
+      color: #fff;
+
+      .modal-content-header {
+        .close {
+          border: 1px solid var(--Primary-Dark);
+          background: var(--primary-select-gray);
+        }
+
+        h3,
+        span {
+          color: #fff;
+        }
+      }
+
+      .modal-content-body {
+        color: #fff;
+      }
+
+      .modal-content-actions {
+        background: var(--primary-select-gray);
+      }
     }
   }
 }

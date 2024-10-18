@@ -16,51 +16,6 @@ if (toggleDarkMode) {
   });
 }
 
-// Chart.js Initialization
-const chartElement = document.getElementById("eventChart");
-if (chartElement && typeof Chart !== "undefined") {
-  const ctx = chartElement.getContext("2d");
-  const eventChart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-      datasets: [
-        {
-          label: "Event Registrations",
-          data: [
-            1200, 800, 900, 1300, 1500, 2000, 1700, 1600, 1800, 1900, 2200,
-            2100,
-          ],
-          backgroundColor: "rgba(75, 192, 192, 0.5)",
-          borderColor: "rgba(75, 192, 192, 1)",
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
-}
-
 // Collapse Sidebar Functionality
 const sidebar = document.getElementById("sidebar");
 const collapseBtn = document.getElementById("collapseBtn");

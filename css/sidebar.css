@@ -11,23 +11,23 @@
 
 .sidebar.collapsed {
   width: 64px;
-  
+
   .logo {
     justify-content: center;
   }
-  
+
   .logo-text-wrap {
     width: 32px !important;
-    
+
     .logo-text {
       display: none;
     }
   }
-  
+
   .nav-link {
     justify-content: center;
   }
-  
+
   .nav-link .nav-text {
     display: none;
   }
@@ -43,18 +43,18 @@
       display: none;
     }
   }
-  
+
   .user-profile {
     justify-content: center;
   }
-  
+
   .user-profile .user-details {
     display: none;
   }
-  
+
   .theme-toggle {
     justify-content: center;
-    
+
     .theme-text {
       display: none;
     }
@@ -129,7 +129,7 @@
   line-height: 16px;
 }
 
-.theme-toggle .toggle-on{
+.theme-toggle .toggle-on {
   color: var(--primary);
 }
 
@@ -195,5 +195,9 @@
     border: 1px solid var(--border-color);
     border-radius: 50%;
     background: var(--background-light);
+  }
+
+  .sidebar .collapse-btn {
+    display: none;
   }
 }

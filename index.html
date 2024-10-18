@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/table.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="dashboard">
@@ -204,7 +206,7 @@
           <h3 class="section-heading">Event Registrations per month</h3>
           <div class="grid-2">
             <div class="chart-container card">
-              <!-- <canvas id="eventChart" class="chart"></canvas> -->
+              <canvas id="eventChart" class="chart"></canvas>
             </div>
 
             <div class="carousel-container">
@@ -403,6 +405,31 @@
           </section>
         </div>
 
+        <!-- Modal -->
+        <div id="eventModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-content-header">
+              <h3 id="modalEventName">Event Name</h3>
+              <span id="modalEventDate"></span>
+              <button class="close closeModal">
+                <i class="bi bi-x"></i>
+              </button>
+            </div>
+            <div class="modal-content-body">
+              <p id="modalEventDescription"></p>
+
+              <div>
+                <span id="modalEventSpeaker"></span>
+              </div>
+            </div>
+            <div class="modal-content-actions">
+              <button class="close-modal-btn closeModal">Close</button>
+              <button class="delete-event">Delete</button>
+              <button class="mark-read">Mark as completed</button>
+            </div>
+          </div>
+        </div>
+
         <!-- bottom navigations -->
         <nav class="bottom-nav">
           <a href="/" class="bottom-nav-link active">
@@ -430,6 +457,7 @@
     </div>
 
     <script src="./js/main.js"></script>
-    <script src="./js/table.js" type="module"></script>
+    <script src="./js/table.js"></script>
+    <script src="./js/chart.js"></script>
   </body>
 </html>

@@ -238,10 +238,10 @@ function renderTable(data) {
     row.innerHTML = `
       <td>
        <div class="name-wrap">
-        <button class="show-row-btn">
-          <i class="bi bi-chevron-down"></i>
-        </button>
-        ${event.name}
+          <button class="show-row-btn">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <span class="event-name">${event.name}</span>
         </div
       </td>
       <td>${event.date}</td>
@@ -269,6 +269,10 @@ function renderTable(data) {
     tableBody.appendChild(row);
     tableBody.appendChild(detailsRow);
 
+    // Add event listener to open modal when clicking on event name
+    const eventNameSpan = row.querySelector(".event-name");
+    eventNameSpan.addEventListener("click", () => openModal(event));
+
     // Add event listener to toggle the details row
     const chevronBtn = row.querySelector(".show-row-btn");
     chevronBtn.addEventListener("click", () => {
@@ -288,6 +292,32 @@ function renderTable(data) {
     });
   });
 }
+
+// Modal logic
+const modal = document.getElementById("eventModal");
+const closeButtons = document.querySelectorAll(".closeModal");
+
+function closeModal() {
+  modal.style.display = "none";
+}
+closeButtons.forEach((btn) => btn.addEventListener("click", closeModal));
+
+function openModal(event) {
+  document.getElementById("modalEventName").textContent = event.name;
+  document.getElementById("modalEventDate").textContent = event.date;
+  document.getElementById("modalEventSpeaker").textContent = event.speaker;
+  document.getElementById("modalEventDescription").textContent =
+    event.description || "No description available";
+
+  modal.style.display = "block";
+}
+
+// Close modal when user clicks outside
+window.onclick = function (event) {
+  if (event.target == modal) {
+    closeModal();
+  }
+};
 
 // Function to render the pagination controls
 function renderPagination(totalRows) {

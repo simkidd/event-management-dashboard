@@ -202,12 +202,17 @@ table th {
   gap: 16px;
 }
 
+.name-wrap .event-name {
+  cursor: pointer;
+}
+
 .details-bg {
   background-color: #f5f5f5;
   padding: 12px;
   padding-inline: 16px;
   border: 1px solid #fcf7ff;
 }
+
 .details-bg .show-speaker {
   display: flex;
   align-items: center;
