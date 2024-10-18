@@ -2,16 +2,35 @@
 const toggleDarkMode = document.getElementById("dark-mode-toggle");
 const switchIcon = document.getElementById("switchIcon");
 
+// Function to apply dark mode
+const enableDarkMode = () => {
+  document.body.classList.add("dark-mode");
+  switchIcon.classList.remove("bi-toggle-off");
+  switchIcon.classList.add("bi-toggle-on", "toggle-on");
+  localStorage.setItem("darkMode", "enabled"); // Save dark mode state to localStorage
+};
+
+// Function to remove dark mode
+const disableDarkMode = () => {
+  document.body.classList.remove("dark-mode");
+  switchIcon.classList.remove("bi-toggle-on", "toggle-on");
+  switchIcon.classList.add("bi-toggle-off");
+  localStorage.setItem("darkMode", "disabled"); // Save dark mode state to localStorage
+};
+
+// Check localStorage and apply dark mode if enabled
+const darkMode = localStorage.getItem("darkMode");
+
+if (darkMode === "enabled") {
+  enableDarkMode(); // Enable dark mode on page load if it's set in localStorage
+}
+
 if (toggleDarkMode) {
   toggleDarkMode.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
     if (document.body.classList.contains("dark-mode")) {
-      switchIcon.classList.remove("bi-toggle-off");
-      switchIcon.classList.add("bi-toggle-on", "toggle-on");
+      disableDarkMode();
     } else {
-      switchIcon.classList.remove("bi-toggle-on", "toggle-on");
-      switchIcon.classList.add("bi-toggle-off");
+      enableDarkMode();
     }
   });
 }
