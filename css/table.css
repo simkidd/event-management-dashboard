@@ -1,0 +1,265 @@
+.event-history {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 32px;
+}
+
+.table-filters,
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--link-text);
+  gap: 16px;
+}
+.table-filters .table-filters-left,
+.table-filters .table-filters-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-wrap {
+  background: #fff;
+  border: 1px solid var(--border-color);
+}
+
+.input-wrap select,
+.input-wrap input {
+  padding: 6px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background: transparent;
+  color: var(--link-text);
+  padding-inline: 16px;
+  appearance: none;
+}
+
+.input-wrap select option {
+  background: #fff;
+  border: 1px solid var(--border-color);
+}
+
+.table-filters .table-filters-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.table-filters .table-filters-right .sort-export {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-filters .table-filters-right .more-option {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  color: var(--link-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-filters .table-filters-right .export {
+  height: 36px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  color: var(--link-text);
+  padding-inline: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+  color: var(--link-text);
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #fff;
+  text-align: left;
+}
+
+table th {
+  text-align: left;
+  font-weight: 600;
+  background-color: var(--border-color);
+  padding: 16px;
+  color: var(--link-text);
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: white;
+  font-size: 12px;
+  display: inline-flex;
+}
+
+.badge.completed {
+  background-color: var(--green-light);
+  color: var(--green);
+}
+
+.badge.in-progress {
+  background-color: var(--blue-light);
+  color: var(--blue);
+}
+
+.pagination {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pagination span,
+.pagination a {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--link-text);
+}
+
+.pagination span.active {
+  background-color: #6c6ced;
+  color: #fff;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--link-text);
+}
+
+.prev-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px !important;
+  width: 36px !important;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 0 !important;
+
+  &:active {
+    background: var(--blue-light);
+  }
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.row-per-page {
+  height: 36px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  padding-inline: 8px;
+  color: var(--link-text);
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 4px;
+  appearance: none;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.show-row-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.details-bg {
+  background-color: #f5f5f5;
+  padding: 12px;
+  padding-inline: 16px;
+  border: 1px solid #fcf7ff;
+}
+.details-bg .show-speaker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Highlight the selected row */
+.selected-row {
+  background-color: #f2f2f7;
+  border: 1px solid #fcf7ff;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .table-filters {
+    flex-direction: column;
+
+    .table-filters-left {
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-start;
+
+      .input-wrap {
+        width: 100%;
+      }
+
+      .input-wrap select,
+      .input-wrap input {
+        width: 100% !important;
+      }
+    }
+
+    .table-filters-right {
+      flex-direction: column;
+      width: 100%;
+
+      .sort-export {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  /* Hide 2nd and 3rd columns on mobile */
+  table th:nth-child(2),
+  table th:nth-child(3),
+  table td:nth-child(2),
+  table td:nth-child(3) {
+    display: none;
+  }
+
+  .show-row-btn {
+    display: inline-block;
+  }
+}
