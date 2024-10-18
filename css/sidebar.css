@@ -125,7 +125,7 @@
   margin-block: 8px;
   padding-inline: 8px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 16px;
 }
 
@@ -156,7 +156,7 @@
 .sidebar .user-profile .user-details {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--link-text);
 }
 
@@ -188,8 +188,8 @@
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     color: var(--color-dark-gray);
     cursor: pointer;
     border: 1px solid var(--border-color);

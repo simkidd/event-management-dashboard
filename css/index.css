@@ -129,7 +129,9 @@ header {
 
   /* Show the menu button on mobile */
   .mobile-menu-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
     font-size: 24px;
