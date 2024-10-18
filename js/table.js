@@ -225,6 +225,9 @@ function filterAndPaginate() {
 
 function renderTable(data) {
   const tableBody = document.getElementById("eventTableBody");
+  const resultCount = document.getElementById("resultCount");
+
+  // Clear previous rows
   tableBody.innerHTML = "";
 
   if (data.length === 0) {
@@ -290,6 +293,9 @@ function renderTable(data) {
           .classList.replace("bi-chevron-up", "bi-chevron-down");
       }
     });
+
+    // Update the displayed count
+    resultCount.textContent = data.length;
   });
 }
 
