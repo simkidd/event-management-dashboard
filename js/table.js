@@ -193,12 +193,23 @@ let rowsPerPage = 10;
 let currentPage = 1;
 let filteredData = [...eventData];
 
+// Sort function for eventData
+function sortEvents(order) {
+  return [...filteredData].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+
+    return order === "recent" ? dateB - dateA : dateA - dateB; // Sort by most recent or oldest
+  });
+}
+
 // Function to filter and paginate the data
 function filterAndPaginate() {
   const searchTerm = document.getElementById("searchInput").value.toLowerCase();
   const statusFilter = document.getElementById("statusFilter").value;
   const nameFilter = document.getElementById("nameFilter").value;
   const dateFilter = document.getElementById("dateFilter").value;
+  const sortOrder = document.getElementById("sortFilter").value;
 
   // Filter data based on search term, status, name, and date
   filteredData = eventData.filter((event) => {
@@ -218,6 +229,9 @@ function filterAndPaginate() {
   // Reset to the first page after filtering
   currentPage = 1;
 
+  // Sort filtered data by date (most recent first)
+  filteredData = sortEvents(sortOrder);
+
   // Re-render the table and pagination with filtered data
   paginateTable();
   renderPagination(filteredData.length);
@@ -232,6 +246,7 @@ function renderTable(data) {
 
   if (data.length === 0) {
     tableBody.innerHTML = "<tr><td colspan='4'>No events found</td></tr>"; // Show message when no data
+    resultCount.textContent = "0";
     return;
   }
 
@@ -295,7 +310,7 @@ function renderTable(data) {
     });
 
     // Update the displayed count
-    resultCount.textContent = data.length;
+    resultCount.textContent = filteredData.length;
   });
 }
 
@@ -439,6 +454,9 @@ document
   .addEventListener("change", filterAndPaginate);
 document
   .getElementById("dateFilter")
+  .addEventListener("change", filterAndPaginate);
+document
+  .getElementById("sortFilter")
   .addEventListener("change", filterAndPaginate);
 
 // Initial render

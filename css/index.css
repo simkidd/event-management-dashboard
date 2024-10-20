@@ -76,6 +76,8 @@ header {
 }
 
 /* Media Queries */
+@media screen and (min-width: 768px) and (max-width: 1024px) {}
+
 @media screen and (max-width: 768px) {
   .mobile-menu-btn {
     display: flex !important;
@@ -91,18 +93,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
-  }
-
-  .main .main-inner {
-    padding: 8px 20px !important;
-
-    .overview-cards-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(1, 1fr);
-    }
   }
 
   /* Show the menu button on mobile */
@@ -195,6 +185,10 @@ body.dark-mode {
 
     .chart-container {
       border: 1px solid var(--primary-dark);
+    }
+
+    .custom-icon{
+      color: #fff;
     }
   }
 
@@ -323,6 +317,16 @@ body.dark-mode {
 
       .modal-content-actions {
         background: var(--primary-select-gray);
+      }
+    }
+  }
+
+  .dropdown-menu{
+    background: var(--background-dark);
+    .dropdown-item{
+      color: white !important;
+      &:hover{
+        background: var(--primary-dark)!important;
       }
     }
   }

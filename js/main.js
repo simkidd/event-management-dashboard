@@ -8,6 +8,9 @@ const enableDarkMode = () => {
   switchIcon.classList.remove("bi-toggle-off");
   switchIcon.classList.add("bi-toggle-on", "toggle-on");
   localStorage.setItem("darkMode", "enabled"); // Save dark mode state to localStorage
+ 
+  // Trigger the custom event to update the chart
+ document.body.dispatchEvent(new Event('darkModeToggle'));
 };
 
 // Function to remove dark mode
@@ -16,6 +19,9 @@ const disableDarkMode = () => {
   switchIcon.classList.remove("bi-toggle-on", "toggle-on");
   switchIcon.classList.add("bi-toggle-off");
   localStorage.setItem("darkMode", "disabled"); // Save dark mode state to localStorage
+ 
+  // Trigger the custom event to update the chart
+ document.body.dispatchEvent(new Event('darkModeToggle'));
 };
 
 // Check localStorage and apply dark mode if enabled

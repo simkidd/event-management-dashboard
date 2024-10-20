@@ -4,6 +4,7 @@ const chartElement = document.getElementById("eventChart");
 if (chartElement && typeof Chart !== "undefined") {
   const ctx = chartElement.getContext("2d");
 
+  // Create the chart first
   const eventChart = new Chart(ctx, {
     type: "bar",
     data: {
@@ -34,6 +35,7 @@ if (chartElement && typeof Chart !== "undefined") {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       scales: {
         y: {
           beginAtZero: true,
@@ -49,6 +51,7 @@ if (chartElement && typeof Chart !== "undefined") {
           grid: {
             display: false,
           },
+          
         },
       },
       plugins: {
@@ -58,4 +61,20 @@ if (chartElement && typeof Chart !== "undefined") {
       },
     },
   });
+
+  // Function to update the chart text color
+  const updateChartTextColor = () => {
+    const darkMode = localStorage.getItem("darkMode");
+    const textColor = darkMode === "enabled" ? "#fff" : "#000";
+
+    eventChart.options.scales.y.ticks.color = textColor; // Set color for Y-axis ticks
+    eventChart.options.scales.x.ticks.color = textColor; // Set color for X-axis ticks
+    eventChart.update(); // Update the chart to apply changes
+  };
+
+  // Initial text color setup
+  updateChartTextColor();
+
+  // Listen for dark mode toggle event to update chart text color
+  document.body.addEventListener('darkModeToggle', updateChartTextColor);
 }

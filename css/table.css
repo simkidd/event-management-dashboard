@@ -25,6 +25,8 @@
 .input-wrap {
   background: #fff;
   border: 1px solid var(--border-color);
+  position: relative;
+  display: inline-block;
 }
 
 .input-wrap select,
@@ -38,6 +40,21 @@
   color: var(--link-text);
   padding-inline: 16px;
   appearance: none;
+}
+
+.input-wrap select {
+  width: 100%;
+  padding-right: 36px;
+}
+
+.custom-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--link-text);
+  font-size: 10px;
 }
 
 .input-wrap select option {
@@ -65,6 +82,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &::after{
+    display: none;
+  }
 }
 
 .table-filters .table-filters-right .export {
@@ -226,6 +247,40 @@ table th {
 }
 
 /* Media Queries */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .table-filters {
+    flex-direction: column;
+
+    .table-filters-left {
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-start;
+
+      .input-wrap {
+        width: 100%;
+      }
+
+      .input-wrap select,
+      .input-wrap input {
+        width: 100% !important;
+      }
+      .input-wrap select {
+        text-align: center;
+      }
+    }
+
+    .table-filters-right {
+      flex-direction: column;
+      width: 100%;
+
+      .sort-export {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .table-filters {
     flex-direction: column;
@@ -242,6 +297,10 @@ table th {
       .input-wrap select,
       .input-wrap input {
         width: 100% !important;
+      }
+
+      .input-wrap select {
+        text-align: center;
       }
     }
 

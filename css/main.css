@@ -32,7 +32,7 @@
 .overview-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform .3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .overview-card h3 {
@@ -77,6 +77,7 @@
   border: 1px solid var(--border-color);
   border-radius: 5px;
   padding: 40px;
+  height: 350px;
 }
 
 .carousel-container {
@@ -199,4 +200,36 @@ td {
 .in-progress {
   background: var(--color-in-progress);
   color: white;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .main .main-inner {
+    .overview-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main .main-inner {
+    padding: 8px 20px !important;
+
+    .overview-cards-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .chart-container {
+    padding: 25px;
+    height: 300px;
+  }
 }
