@@ -75,6 +75,18 @@
   color: var(--link-text);
 }
 
+.event-speakers{
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+
+  img{
+    height: 32px;
+    width: fit-content;
+    margin-bottom: 16px;
+  }
+}
+
 .modal-content-actions {
   display: flex;
   align-items: center;

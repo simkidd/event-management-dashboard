@@ -212,7 +212,7 @@
             <div class="carousel-container">
               <div
                 id="carouselExampleAutoplaying"
-                class="carousel slide"
+                class="carousel slide carousel-fade"
                 data-bs-ride="carousel"
               >
                 <div class="carousel-indicators">
@@ -432,8 +432,11 @@
             <div class="modal-content-body">
               <p id="modalEventDescription"></p>
 
-              <div>
+              <div class="event-speakers">
+                <img src="/assets/images/Avatar Group.png" alt="avatar-group">
+                <span >3 Guest Speakers: Speaker name A, Speaker name B,</span>
                 <span id="modalEventSpeaker"></span>
+                <span >300 Attendees</span>
               </div>
             </div>
             <div class="modal-content-actions">
@@ -447,23 +450,35 @@
         <!-- bottom navigations -->
         <nav class="bottom-nav">
           <a href="/" class="bottom-nav-link active">
-            <i class="bi bi-house"></i>
+            <img src="./assets/svgs/home-active.svg" alt="home-icon" />
             <span>Home</span>
           </a>
           <a href="#" class="bottom-nav-link">
-            <i class="bi bi-calendar-event"></i>
+            <img
+              src="./assets/svgs/solar_calendar-linear (2).svg"
+              alt="event-icon"
+            />
             <span>Events</span>
           </a>
           <a href="#" class="bottom-nav-link">
-            <i class="bi bi-person-bounding-box"></i>
+            <img
+              src="./assets/svgs/solar_user-speak-rounded-linear (1).svg"
+              alt="speaker-icon"
+            />
             <span>Speakers</span>
           </a>
           <a href="#" class="bottom-nav-link">
-            <i class="bi bi-file-earmark-bar-graph"></i>
+            <img
+              src="./assets/svgs/solar_document-linear (1).svg"
+              alt="reports-icon"
+            />
             <span>Reports</span>
           </a>
           <a href="#" class="bottom-nav-link">
-            <i class="bi bi-person-circle"></i>
+            <img
+                src="./assets/svgs/user-circle.svg"
+                alt="reports-icon"
+              />
             <span>Profile</span>
           </a>
         </nav>
